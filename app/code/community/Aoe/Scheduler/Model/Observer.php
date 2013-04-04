@@ -127,6 +127,7 @@ class Aoe_Scheduler_Model_Observer extends Mage_Cron_Model_Observer {
 				->setStatus(Mage_Cron_Model_Schedule::STATUS_ERROR)
 				->setMessages('Job was running longer than the configured max_running_time')
 				->save();
+			$schedule->notify();
 		}
 	}
 
